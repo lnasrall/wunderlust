@@ -51,7 +51,7 @@ table {
 
 /*------------Begin Styles------------*/
 
-@import from https://fonts.google.com/share?selection.family=Molle:ital@1%7CMontserrat  */
+/*@import from https://fonts.google.com/share?selection.family=Molle:ital@1%7CMontserrat  */
 @import url('https://fonts.googleapis.com/css2?family=Molle&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
@@ -544,7 +544,6 @@ footer a{
   
   #testimonials {
     display: grid;
-    grid-template-columns: ;
   }
   
   #testimonials h3{
@@ -568,3 +567,4 @@ footer a{
     background-color: #9B26B0;
   }
 }
+
