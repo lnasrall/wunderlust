@@ -284,6 +284,13 @@ main-content{
   padding: 0 2rem 1rem 2rem;
   margin: 0 auto;
 }
+
+#intro img{
+  background-color: red;
+  display: block;
+  margin-bottom: 10px;
+}
+
 /*------------plan section------------*/
 #plan{
     background-color: var(--yellow);
@@ -565,6 +572,13 @@ footer a{
 @media screen and (min-width: 980px){
   #plan{
     background-color: #9B26B0;
+  }
+
+  #intro img{
+    background-color: pink;
+    display: grid;
+
+    grid-gap: 20px;
   }
 }
 
