@@ -51,7 +51,7 @@ table {
 
 /*------------Begin Styles------------*/
 
-/*@import from https://fonts.google.com/share?selection.family=Molle:ital@1%7CMontserrat  */
+/* @import from https://fonts.google.com/share?selection.family=Molle:ital@1%7CMontserrat  */
 @import url('https://fonts.googleapis.com/css2?family=Molle&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
@@ -89,43 +89,48 @@ table {
   }
 
 /*------------header styles------------*/
-/*
+
 header{
     background: linear-gradient( var(--teal), var(--white));
     color: #000000;
     width: calc(100%-1rem);
     margin: 0 auto;
     padding: 2rem;
+    align-items: center;
     display: grid;
-    grid-template-areas: 'logo menu menu'
-                         'h1 h1 h1'
-                         'headerp headerp headerp';
+    align-items: center;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'logo menu'
+                         'h1 h1'
+                         'headerp headerp';
 }
 
 header div{
   background-color: var(--yellow);
-  width: 100%;
-  padding: 0.5rem;
-  grid-area: menu;
+   padding: 0.5rem;
+   grid-area: menu;
+   text-transform: uppercase;
+   font-weight: bold;
+   text-align: center;
 }
 
 header p{
-  grid-area: headerp;
+   grid-column: 1/-1;
+   grid-area: headerp;
 }
 
 #logo{
-  padding: 0.5rem;
-  grid-area: logo;
+   padding: 0.5rem;
+   grid-area: logo;
 }
-*/
-
 
 /*------------body styles------------*/
 
   body{
     font-family: var(--fonts);
     box-sizing: border-box;
-    line-height:2;
+    line-height: 2;
   }
 
 /*------------sr styles------------*/
@@ -179,99 +184,125 @@ q{
   text-align: center;
 }
 
-
 /*------------nav and link styles------------*/
-nav{
- background-color: var(--yellow); 
-  display: block;
-  width: 200px;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 1em;
-}
 
 nav a{
   text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: var(--purple);
+  font-size: 1.1rem;
+  font-weight: bold;
   color: var(--black);
-  background-color: var(--teal);
-  border-bottom: solid var(--dark-gray);
-  display: block;
-  padding: 1.5rem;
   
 }
 /*------------menu toggle styles------------*//*
 #menu-toggle {
+     background-color: var(--yellow);
   display: block;
-  width: 30px;
-  height: 30px;
+  position: relative;
+  bottom: 3rem;
+  left: 2rem;  
   z-index: 1;  
   -webkit-user-select: none;
   -moz-user-select: none;
    -ms-user-select: none;
        user-select: none;
+  
 }
 
-#menu-toggle:hover {
+#menu-toggle a {
+  display:inline-grid;
+  background-color: var(--purple);
+  padding: 10px;
+  text-decoration: none;
+  color: var(--black);
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  
+  
+}
+
+#menu-toggle a:hover {
   color: #4f7794;
 }
 
-
-/* The hamburger button hidden inside an input element *//*
-#menu-toggle input {
+/* The hamburger button hidden inside an input element */
+/*#menu-toggle input {
   display: block;
-  width: 30px;
-  height: 30px;
   position: absolute;
-  padding: 2rem;
   cursor: pointer;  
-  opacity: 0%; /* hide this */
-/*  z-index: 2; /* and place it over the hamburger */  
-/*  -webkit-touch-callout: none;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */  
+  -webkit-touch-callout: none;
+  
 }
+
 /*
-#menu-toggle input:checked + label {
-  background: black;
-  color: white;
+ * Hamburger
+ */
+/*#menu-toggle label{
+  
+  cursor: pointer;
+  display: block;
+  margin-bottom: 6px;
+  position: relative;
+  background: blue;
+  border-radius: 3px;  
+  z-index: 1;  
+  -webkit-transform-origin: 4px 0px;  
+      -ms-transform-origin: 4px 0px;  
+          transform-origin: 4px 0px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  
 }
 
+/* 
+ * Change the color of the hamburger when toggled
+ */
+/*#menu-toggle input:checked + label {
+  background: #232323;
+}
 
-#menu-toggle ul{
+/*
+ * Use absolute positioning to place the menu off-screen
+ */
+/*#menu-toggle ul{
   position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -50px;
+  width: 370px;
   padding: 25px;
-  padding-top: 125px;
-  background: red;
+  background-color: red;
   list-style-type: none;
   /* Hide the menu off-screen to the right */
- /*  right: 100%;
-  -webkit-transition: right 0.3s ease;
-  -o-transition: right 0.3s ease;
-  transition: right 0.3s ease; 
+  right: -500%;
+  -webkit-transition: right 0.4s ease;
+  -o-transition: right 0.4s ease;
+  transition: right 0.4s ease; 
 }
-*/
+
+/*#menu-toggle li{
+  padding: 20px;
+  margin: 0 auto;
+  background-color: pink;
+  
+}
 
 /*
  * Slide the menu in from right when the input is checked
- *//*
-#menu-toggle input:checked ~ ul {
+ */
+/*#menu-toggle input:checked ~ ul {
+  
+
   right: 0;
 }
-/*------------image styles------------*//*
-#img-grid{
-  background-color: red;
-  display: block;
-  margin: 0 auto;
-  magrin-bottom: 10px;
-  width: 100%;
-}
+
+*/
 /*------------main content styles------------*/
-main-content{
-  background-color: white;
-  
-}
+
 /*------------intro section------------*/
 #intro{
  padding-bottom: 1rem; 
@@ -285,17 +316,21 @@ main-content{
   margin: 0 auto;
 }
 
-#intro img{
+/*------------image styles------------*/
+#img-grid{
   background-color: red;
   display: block;
-  margin-bottom: 10px;
+  margin: 0 auto;
+  magrin-bottom: 10px;
+  width: 100%;
 }
 
 /*------------plan section------------*/
+
 #plan{
     background-color: var(--yellow);
     padding: 1rem 2rem 1rem 2rem;
-  
+   display: block;
  }
 
 #plan div>section{
@@ -310,13 +345,14 @@ main-content{
 }
 
 #plan section{
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
+
 /*------------testimonials section------------*/
+
 #testimonials{
     background-color:purple;
     padding: 1rem 2rem 1rem 2rem;
-  display: grid;
 }
 
 #testimonials img{
@@ -325,20 +361,20 @@ main-content{
 }
 
 #testimonials section{
-  background-color: pink;
+  background-color: orange;
   text-align: center;
   padding: 0 3rem 1rem 3rem;
-  margin-bottom: 1rem;
 }
 
 #testimonials p{
-  background-color: orange;
+  background-color: blue;
 }
 
 #testimonials q{
   background-color: yellow;
  
 }
+
 /*------------about section------------*/
 #about{
   background-color: var(--blue);
@@ -357,7 +393,7 @@ main-content{
 #about div{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align: center;
   
 }
 
@@ -398,7 +434,6 @@ main-content{
   border: 2px solid var(--purple);
   display: grid;
   grid-template-columns: 1fr;
-  
 }
 
 .custom-select select{
@@ -406,7 +441,6 @@ main-content{
     padding: 1rem 0.25rem 1rem 0.25rem;
 font-size: 1em;
   font-size: max(16px, 1em);
-  cursor: pointer;
 }
 
 .required{
@@ -430,7 +464,7 @@ font-size: 1em;
   line-height: 1.5;
 }
 
-.radio-input{
+ .radio-input{
   background-color: blue;
   
 }
@@ -483,10 +517,11 @@ select:focus{
   text-transform: uppercase;
   margin-top: 25px;
 }
+
 /*------------footer styles------------*/
 footer{
   background-color: var(--light-gray);
-   padding: 1.5rem;
+   padding: 2rem;
   text-align: center;
   display: grid;
   grid-template-columns: 1fr;
@@ -513,72 +548,98 @@ footer a{
 }
 /*------------small screens------------*/
 @media screen and (min-width: 500px){
+}
+/*------------medium screens------------*/
+@media screen and (min-width: 550px){
   header{
-    background-color: #F6D64A;
-  }
-  #plan{
     display: grid;
+    grid-template-columns: repeat(5,1fr);
+  }
+  
+  #logo{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  
+  h1{
+    grid-column-start: 2;
+    grid-column-end:3;
+    grid-row-start: 1;
+    align-items: center; 
+  }
+  
+  header p{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+  
+  header div{
+    grid-column-start: 1/-1;
+  }
+  nav{
+     grid-column-start: 1;
+    grid-column-end: 6;
+  }
+  
+  nav ul{
+    display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-column-gap: 1em;
+    align-items: center;
+    overflow: none;
+  }
+  
+  #plan{
+    display: block;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-  }
-  }
-  
-  #plan section{
-    background-color: #499BD2;
+    grid-template-rows: 1fr 1fr;
   }
   
-  
-  #plan div>section{
-    background-color: pink;
-     margin-bottom: 0px;
-  }
   #plan h3{
-    grid-column: 1/-1;
-    
+    grid-column: 1/ -1;
+  }
+  
+ 
+  #toggle{
+    display: none;
+  }
+  
+  #menu-toggle>label{
+    display: none;
   }
 
-/*------------medium screens------------*/
-@media screen and (min-width: 650px){
-  
-  
-  
-  
-  #testimonials section{
-    background: blue;
-    margin: 2rem;
-    
-  }
-  
-  #testimonials {
-    display: grid;
-  }
-  
-  #testimonials h3{
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-  
-  #about{
-    padding: 2.5rem;
-  }
-  
- #about div{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center; 
-   
 }
 /*------------large screens------------*/
 @media screen and (min-width: 980px){
-  #plan{
-    background-color: #9B26B0;
+   header {
+    
   }
+  
+  nav{
 
-  #intro img{
-    background-color: pink;
-    display: grid;
+   
+  }
+  
+  nav ul{
 
-    grid-gap: 20px;
+  
+  
+  }
+  
+  main > section{
+    margin-bottom: 3rem;
+  }
+  
+  main h2{
+    font-size: 2rem;
+  }
+  
+  p{
+    font-size: 1.15rem;
   }
 }
-
+}
