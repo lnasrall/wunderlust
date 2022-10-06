@@ -317,12 +317,18 @@ nav a{
 }
 
 /*------------image styles------------*/
-#img-grid{
+#img-grid>img{
   background-color: red;
-  display: block;
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  align-items: center;
   margin: 0 auto;
-  magrin-bottom: 10px;
-  width: 100%;
+}
+
+#img-grid>picture{
+  justify-content: stretch;
+  margin: 0 auto;
 }
 
 /*------------plan section------------*/
@@ -365,12 +371,6 @@ nav a{
   padding: 0 3rem 1rem 3rem;
 }
 
-#testimonials p{
-}
-
-#testimonials q{
- 
-}
 
 /*------------about section------------*/
 #about{
@@ -461,20 +461,51 @@ font-size: 1em;
   line-height: 1.5;
 }
 
- .radio-input{
-  background-color: blue;
-  
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+  width: 2em;
+  height: 2em;
+  border: 0.5em solid ;
+  border-radius: 50%;
 }
 
-.radio-control{
-  background-color: black;
-  width: 5px;
+input[type="radio"]::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--purple);
 }
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:focus {
+  outline: max(2px, 0.15em) solid var(--purple);
+  outline-offset: max(2px, 0.15em);
+}
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
+
+
 
 .radio-label{
   font-weight: normal;
   text-transform: none;
-  background-color: red;
+  margin: 0.5rem;
 }
 
 #names{
@@ -503,10 +534,6 @@ select:focus{
   padding: 0.5rem;
 }
 
-.focus{
-  background-color: red;
-  color: red;
-}
 
 #mySubmit{
   background-color: var(--purple);
@@ -590,20 +617,25 @@ footer a{
     overflow: none;
   }
   
-  #img-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  #intro{
   }
   
-  #img-grid:last-of-type{
+  #img-grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+   
+  }
+  
+  #img-grid>picture{
     grid-column: 1/ -1;
   }
   
   #plan div{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     grid-gap: 20px;
+    align-items: baseline;
   }
   
   #plan h3{
@@ -667,11 +699,15 @@ footer a{
     font-size: 1.15rem;
   }
   
+  #plan section{
+   
+  }
+  
   
   #plan div{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    grid-gap: ;
     align-items: center;
   }
   
