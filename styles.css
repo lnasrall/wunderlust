@@ -351,7 +351,6 @@ nav a{
 /*------------testimonials section------------*/
 
 #testimonials{
-    background-color:purple;
     padding: 1rem 2rem 1rem 2rem;
 }
 
@@ -361,17 +360,14 @@ nav a{
 }
 
 #testimonials section{
-  background-color: orange;
   text-align: center;
   padding: 0 3rem 1rem 3rem;
 }
 
 #testimonials p{
-  background-color: blue;
 }
 
 #testimonials q{
-  background-color: yellow;
  
 }
 
@@ -593,23 +589,65 @@ footer a{
     overflow: none;
   }
   
-  #plan{
-    display: block;
+  #img-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  #img-grid:last-of-type{
+    grid-column: 1/ -1;
+  }
+  
+  #plan div{
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
   }
   
   #plan h3{
     grid-column: 1/ -1;
   }
   
+  #testimonials div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  
+  #testimonials h3{
+    grid-column: 1/ -1;
+  }
+  
+  
+  #about div{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    grid-gap: 20px;
+  }
+  
+  #about h3{
+    grid-column: 1/ -1;
+  }
  
   #toggle{
     display: none;
   }
   
+  #contact fieldset{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+  
   #menu-toggle>label{
     display: none;
+  }
+  
+  footer{ 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
 }
@@ -641,5 +679,17 @@ footer a{
   p{
     font-size: 1.15rem;
   }
-}
+  
+  #testimonials{
+    
+  }
+
+  #testimonials h3{
+    grid-column: 1/ -1;
+  }
+  
+  footer{ 
+    
+  }
+  
 }
